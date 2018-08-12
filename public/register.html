@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新用户注册</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body class='register_bg'>
+    <div class="register_wrap">
+        <header>
+            <span>欢迎注册</span><span>已有账号？<a href="#">请登录&gt;</a></span>
+        </header>
+        <div class="container">
+            <ul>
+                <li class="active">验证手机号码</li>
+                <li>填写账号信息</li>
+                <li>注册成功</li>
+            </ul>
+            <div class="mobile_verify">
+                <div class="choose_area">
+                    <div class="select_module">中国0086</div>
+                    <!-- 选择地区模态框 -->
+                    <div class="select_pop">
+                        <div class="search_area">
+                            <input type="text" placeholder="搜索您的国家和地区">
+                        </div>
+                        <div class="search_alpha">
+                            <a href="" class="current">常用国家/地区</a><a href="">A</a><a href="">B</a><a href="">C</a><a href="">D</a><a href="">E</a>
+                        </div>
+                        <div class="current_area">常用国家/地区 <span></span></div>
+                        <ol>
+                            <li><span><img src="" alt="">中国台湾</span><span>0886</span></li>
+                            <li><span><img src="" alt="">中国香港</span><span>0886</span></li>
+                            <li><span><img src="" alt="">澳大利亚</span><span>0061</span></li>
+                            <li><span><img src="" alt="">美国</span><span>0001</span></li>
+                        </ol>
+                    </div>
+                    <input type="text" placeholder="常用手机号">
+                </div>
+
+                <div class="btn_verify_mobile">点击按钮进行验证</div>
+                <div class="btn_next"><button>下一步</button></div>
+            </div>
+            <div class="regist_sort"><span>企业用户注册</span> 
+                <span>国际站用户注册</span> 
+            </div>
+        </div>
+        <footer>
+            <div class="links">
+                <a>
+                关于我们</a>|<a> 联系我们</a>|<a> 人才招聘</a>|<a> 商家入驻</a>|<a> 广告服务</a>|<a> 手机京东</a>|<a> 友情链接</a>|<a> 销售联盟</a>|<a> 京东社区</a>|<a> 京东公益</a>|
+                <a> English Site</a><br>
+            </div>
+                Copyright©2004-2018  京东JD.com 版权所有
+        </footer>
+    </div>
+</body>
+<script>
+    //查找绑定事件元素
+    var mobile_verify=document.querySelector(".mobile_verify>.choose_area>.select_module");
+    var select_pop=document.querySelector(".mobile_verify>.choose_area>.select_pop");
+    select_pop.onfocus=mobile_verify.onclick=function(e){
+        //  console.log(e.target);
+         console.log(select_pop);
+         select_pop.className+=" zindex_show";
+    //绑定事件
+        //查找目标元素
+        //修改元素
+    }
+    document.onclick=function(e){
+        if(e.target!==document.querySelector(".mobile_verify>.choose_area>.select_pop")){
+        // select_pop.className=select_pop.className.replace(/ zindex_show/,"");
+        console.log('外',e.target);
+        }
+    }
+</script>
+</html>

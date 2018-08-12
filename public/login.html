@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <style>
+        *{color:#666;}
+        body{height:100%;width:100%;margin:0 0;padding:0 0;
+        }
+        #login{
+            /* border:salmon solid 1px; */
+            position:relative; 
+        }
+        #login div.container{
+            position:absolute;
+            border:solid #666 1px;
+            border-radius:3px;
+            top:50%;
+            left:50%;
+            /* margin-left: -200px;     //宽高固定时水平垂直居中用法
+            margin-top:-100px;
+            height: 200px; 
+            width:400px; */
+            /* 宽高不固定时，水平垂直居中用法 */
+            transform:translate(-50%,50%);     /*自身宽的一半，高度的0%*/
+        }
+        #login div.container ul{
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            margin:0 0;
+            padding:0 0 20px 0;
+            width:300px;
+        }
+        #login div.container ul li{
+            display: flex;
+            justify-content: space-around;
+        }
+        .login_input{
+            height:40px;
+            width:80%;
+        }
+        .login_input input{
+            border:1px solid #ccc;
+            border-radius: 2px;
+            height: 2em;
+            text-indent: .5em;
+            width:100%;
+        }
+        .login_tab h4{
+            display: flex;
+            justify-content: space-around;
+            width:80%;
+        }
+        .login_tab h4 span{
+            color:#999;
+            border-bottom:1px solid #ddd;
+            text-align: center;
+            line-height: 2em;
+            width:50%;
+        }
+        .container button{
+            height: 2em;
+            width:80%;
+        }
+        .login_tab{
+            width:100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .login_tab span.active_tab{
+            color:#333;
+            border-bottom:2px solid salmon;
+        }
+        .register{
+            
+        }
+        .sv_cookie{
+            font-size:12px;
+            line-height: 36px;
+        }
+        .sv_cookie input[type="checkbox"]{
+            height: 32px;
+            line-height:50px;
+        }
+        .sv_cookie span:nth-child(2){
+            margin-left:-60px;
+            margin-right:72px;
+        }        
+        .sv_cookie>a:last-child{
+            color:salmon;
+            font-weight: 600;
+        }
+        .qr_code{
+            border:1px solid salmon;
+            display: block;
+            width:180px;
+            height:180px;
+            overflow: hidden;
+        }
+        .qr_code img{
+            width:100%;
+            height: 100%;
+        }
+        .login_method{
+            background: #fff;
+            /* border: 1px solid saddlebrown; */
+            height:240px;
+            width:300px;
+            position: relative;
+        }
+        .login_with_pwd{
+            background: #fff;
+            position: absolute; 
+        }
+        .login_code{
+            background: #fff;
+            position: absolute; 
+            margin-top:-2px;
+            padding-top:2px;
+        }
+        .login_code span{
+            font-size:12px;
+        }
+        .login_z_index{
+            z-index:-5;
+        }
+    </style>
+</head>
+<body>
+    <div id='login'>
+        <div class="container">
+            <div class='login_tab'><h4>
+                <span class="active_tab">账号登录</span><span>扫码登录</span>
+            </h4></div>
+            <div class="login_method">
+                <div class="login_with_pwd ">
+                    <ul>
+                        <li><div class="login_input"><input type="text" placeholder="账号/手机号"></div></li>
+                        <li><div class="login_input"><input type="password" placeholder="密码"></div></li>
+                        <li><button class="login">登录</button></li>
+                        <li class="sv_cookie">
+                            <input type="checkbox"><span>记住我</span><a href="">没有账号？</a>
+                        </li>
+                        <li><button class="register">注册</button></li>
+                    </ul>
+                </div>
+                <div class="login_code login_z_index">
+                    <ul>
+                        <li>
+                            <div class="qr_code">
+                                <img src="https://v2.qr.weibo.cn/inf/gen?api_key=a0241ed0d922e7286303ea5818292a76&data=https%3A%2F%2Fpassport.weibo.cn%2Fsignin%2Fqrcode%2Fscan%3Fqr%3D2NjJbb9D4AFADYemXcmc6WvJYxRpxdQgjBnFyY29kZQ..%26sinainternalbrowser%3Dtopnav%26showmenu%3D0&datetime=1534054648&deadline=0&level=M&logo=http%3A%2F%2Fimg.t.sinajs.cn%2Ft6%2Fstyle%2Fimages%2Findex%2Fweibo-logo.png&output_type=img&redirect=0&sign=2670d19778b69583d6596bfc5ecc7d0d&size=180&start_time=0&title=sso&type=url" alt="">
+                            </div>
+                        </li>
+                        <li><span>还没有注册？立即注册</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // window.onload=function(){
+    //     console.log(document.body.clientHeight);
+    //     console.log(document.body.offsetHeight);
+    // }
+    var tabs = document.querySelectorAll("#login>div.container>div.login_tab>h4>span");
+    console.log(tabs);
+    var login_code=document.querySelector("#login>.container>div:nth-child(2)>div:nth-child(2)");
+    console.log("login_code.className:",login_code.className);
+    //找到绑定元素
+    tabs[0].onclick=function(){
+    //绑定事件
+        //查找修改元素
+        for(var i=0;i<tabs.length;i++){
+            tabs[i].className="";
+        }
+        tabs[0].className="active_tab";
+        //修改元素
+        console.log('className',login_code.className);
+        login_code.className+=" login_z_index";
+    }
+    tabs[1].onclick=function(){
+        console.log(tabs[1]);
+        for(var i=0;i<tabs.length;i++){
+            tabs[i].className="";
+        }
+        tabs[1].className="active_tab";
+        login_code.className=" login_code"
+        console.log("className",login_code.className);
+    }
+</script>
+</html>

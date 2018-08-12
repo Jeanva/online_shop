@@ -1,0 +1,213 @@
+*{color:#666;}
+.register_bg{
+    background:#f5f5f5;
+    color:#999;
+    margin: 0;
+    padding:0;
+    font-size:12px;
+}
+.register_wrap{
+    display: block;
+}
+header{
+    top:0;
+    width:100%;
+    box-shadow: #eee 2px 2px 2px 2px;
+    background: #fff;
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header span{
+    margin:0 80px;
+}
+header span a{
+    color:red;
+    text-decoration: none;
+}
+footer{
+    border-top:solid 1px #ddd;
+    /* position: absolute; */
+    bottom:0;
+    background: #fff;
+    height:100px;
+    font-size:12px;
+    text-align: center;
+    width:100%;
+    padding:10px 0 10px 0;
+    /* transform: translate(-50%,-50%); */
+}
+.links{
+    text-align: center;
+    line-height: 60px;
+}
+.links a{
+    padding:0 .5em;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:360px;
+    margin: 0 auto;
+    padding:60px 0;
+}
+.container ul{
+    list-style-type:none;
+    margin: 0;
+    padding:0;
+    text-align: center;
+    width:100%;
+    display: flex;
+}
+.container ul li{
+    color:rgb(5, 201, 31);
+    width:33.333333%;
+    margin:0;
+    text-align: center;
+    padding:0;
+}
+.container ul li.active::before,.container ul li::before{
+    display: block;
+    background-color:rgb(5, 201, 31);
+    border-radius: 50%;
+    border:solid 1px rgb(7, 204, 105);
+    color:#fff;
+    font-weight:600;
+    text-align: center;
+    margin-left: 44%;
+    margin-bottom:10px;
+    height:1.8em;
+    line-height: 1.8em;
+    width:1.8em;
+}
+.container ul li::before{
+    background-color: #fff;
+    border:solid 1px #ccc;
+    color:#ccc;
+}
+.container ul li:first-child::before{
+    content:"1";
+}
+.container ul li:nth-child(2)::before{content:"2";
+}
+.container ul li:last-child::before{
+    content:"3";
+}
+.mobile_verify{
+    /* background: #fff; */
+    display: flex;
+    flex-direction: column;
+    padding:30px 0 0;
+    width:300px;
+    height: 300px;
+}
+.mobile_verify>div{
+    height:40px;
+}
+.mobile_verify .choose_area{
+    background: #fff;
+    border:1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    height:40px;
+    margin-bottom:20px;
+}
+.select_module{
+    width:30%;
+    text-align: center;
+    /* position: relative; */
+}
+.select_pop{
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 2px #eee ,-1px -1px 2px 2px #eee ;
+    width:268px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    padding:14px 14px;
+    position: absolute;
+    margin-top:40px;
+    z-index: -5;
+}
+.zindex_show{ z-index:5;}
+.select_pop .current_area{
+    background-color:#fff;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.select_pop .current_area span{
+    border-top:solid 1px #ccc;
+    display: inline-block;
+    margin: 10px 0 0 0;
+    width:66%;
+}
+.active_target{
+    border:solid 1px #333;
+}
+.choose_area .select_pop .search_area{
+    text-align: center;
+}
+.choose_area .select_pop ol{
+    list-style-type: none;
+    margin: 0 0;
+    padding: 0 0;
+    height:150px;
+    overflow-y: scroll;
+}
+.choose_area .select_pop ol li{
+    display: flex;
+    justify-content:space-between;
+}
+.choose_area .select_pop .search_area input{
+    background: #eee;
+    border:1px solid #ccc;
+    width:100%;
+}
+.search_alpha{
+    font-size: 14px;
+}
+.search_alpha a{
+    text-decoration: none;
+    margin: 0 .5em 0 0;
+}
+.search_alpha a.current,
+.search_alpha a:hover{
+    color:red;
+}
+.choose_area input{
+    height: 38px;
+    border-left:1px solid #ccc;
+    border-top:none;
+    border-right:none;
+    border-bottom:none;
+    text-indent: .5em;
+    width: 70%;
+}
+.choose_area input::placeholder{
+    color:#666;
+}
+input::placeholder{
+    color:#ccc;
+}
+.btn_verify_mobile{
+    background: #fff;
+    border:1px solid #ccc;
+    text-align: center;
+    line-height: 40px;
+}
+.regist_sort{
+    display: flex;
+    justify-content:space-between;
+    width:300px;
+}
+.btn_next{
+    padding:20px 0;
+}
+.btn_next button{
+    height: 2em;
+    width:100%;
+}
