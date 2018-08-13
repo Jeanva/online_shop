@@ -21,7 +21,7 @@
             <div class="mobile_verify">
                 <div class="choose_area">
                     <div class="select_module">中国0086</div>
-                    <!-- 选择地区模态框 -->
+                    <!-- 选择地区模态框 鼠标划入时出现-->
                     <div class="select_pop">
                         <div class="search_area">
                             <input type="text" placeholder="搜索您的国家和地区">
@@ -57,23 +57,6 @@
         </footer>
     </div>
 </body>
-<script>
-    //查找绑定事件元素
-    var mobile_verify=document.querySelector(".mobile_verify>.choose_area>.select_module");
-    var select_pop=document.querySelector(".mobile_verify>.choose_area>.select_pop");
-    select_pop.onfocus=mobile_verify.onclick=function(e){
-        //  console.log(e.target);
-         console.log(select_pop);
-         select_pop.className+=" zindex_show";
-    //绑定事件
-        //查找目标元素
-        //修改元素
-    }
-    document.onclick=function(e){
-        if(e.target!==document.querySelector(".mobile_verify>.choose_area>.select_pop")){
-        // select_pop.className=select_pop.className.replace(/ zindex_show/,"");
-        console.log('外',e.target);
-        }
-    }
-</script>
+<script src='js/jquery-1.11.3.js'></script>
+<script src="js/register.js"></script>
 </html>

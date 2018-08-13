@@ -28,7 +28,7 @@ header span a{
 }
 footer{
     border-top:solid 1px #ddd;
-    /* position: absolute; */
+    position: absolute;
     bottom:0;
     background: #fff;
     height:100px;
@@ -124,13 +124,14 @@ footer{
     background-color: #fff;
     box-shadow: 2px 2px 2px 2px #eee ,-1px -1px 2px 2px #eee ;
     width:268px;
+    display: none;
     /* display: flex;
     flex-direction: column;
     align-items: center; */
     padding:14px 14px;
     position: absolute;
     margin-top:40px;
-    z-index: -5;
+    /* z-index: -5; */
 }
 .zindex_show{ z-index:5;}
 .select_pop .current_area{
